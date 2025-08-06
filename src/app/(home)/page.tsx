@@ -1,6 +1,8 @@
 import { getBets } from '@/actions/GET/get-bets';
 import { BetAccordion } from '@/components/bet- accordion';
 
+export const dynamic = 'force-dynamic';
+
 export default async function HomePage() {
   const { bets, success } = await getBets();
 
@@ -18,7 +20,7 @@ export default async function HomePage() {
         <h1 className="sm:text-2xl text-lg">Análise Roleta</h1>
       </header>
       <div className="my-6 sm:mx-6 mx-2 py-2">
-        <p className='mb-6 font-medium text-lg'>Últimas análises:</p>
+        <p className="mb-6 font-medium text-lg">Últimas análises:</p>
         <BetAccordion bets={bets} />
       </div>
     </main>
